@@ -1,10 +1,16 @@
-# Étape 3a — Audit de `soc-audit.c`
+# Étape 3a — Audit de `soc-audit.c` - MARTINEZ Enzo
 
 ## Problème A 
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
-
+```markdown
+{
+    printf("\n====== ");
+    printf(titre);                              /* (A) */
+    printf(" ======\n");
+}
+```
 
 2. Le **type**
 
@@ -18,7 +24,7 @@
 
 ## Problème B
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
 
 
@@ -34,7 +40,7 @@
 
 ## Problème C
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
 
 
@@ -50,7 +56,7 @@
 
 ## Problème D
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
 
 
@@ -66,7 +72,7 @@
 
 ## Problème E
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
 
 
@@ -82,7 +88,7 @@
 
 ## Problème F
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
 
 
@@ -98,7 +104,7 @@
 
 ## Problème G
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
 
 
@@ -114,7 +120,7 @@
 
 ## Problème H
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
 
 
@@ -130,7 +136,7 @@
 
 ## Problème I
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
 
 
@@ -146,7 +152,7 @@
 
 ## Problème J
 
-1. Le **repère** et la **ligne**,
+1. Le **repère** et la **ligne**
 
 
 
