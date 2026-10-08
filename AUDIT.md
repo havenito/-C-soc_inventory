@@ -187,7 +187,7 @@ Ligne 100
 
 ### 2. Le **type**
 
-``
+`Problème opérateur`
 
 ### 3. Le **mécanisme** en une ou deux phrases
 
