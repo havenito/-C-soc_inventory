@@ -126,6 +126,7 @@ int main(void)
         }
     } while (choix != 0);
 
-    free(inventaire);                           /* (J) */
+        free(inventaire);
+        inventaire = NULL;    /* (J) */
     return 0;
 }

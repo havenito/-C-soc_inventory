@@ -210,13 +210,14 @@ Ligne 125
 
 ### 2. Le **type**
 
-
+`Problème mémoire libre`
 
 ### 3. Le **mécanisme** en une ou deux phrases
 
-
+Le pointeur pointe toujours vers la même adresse, mais cette mémoire ne lui appartient plus quand on ne met pas de NULL
 
 ### 4. Le **correctif** proposé
-
-
+```c
+inventaire = NULL;
+```
 
