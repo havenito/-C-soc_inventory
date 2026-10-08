@@ -44,7 +44,10 @@ void reserver(void)
     if (nb_actifs < capacite)
         return;
     capacite = (capacite == 0) ? 2 : capacite * 2;
-    inventaire = realloc(inventaire, capacite * sizeof(Actif));   /* (B) */
+    Actif *tmp = realloc(inventaire, capacite * sizeof(Actif));   /* (B) */
+    if (tmp != NULL) {
+    inventaire = tmp;
+}
 }
 
 /* Ajoute un actif saisi au clavier. */
@@ -54,10 +57,10 @@ void ajouter(void)
     Actif *a = &inventaire[nb_actifs];
 
     printf("Nom d'hote   : ");
-    scanf("%s", a->hostname);                   /* (C) */
+    scanf("%31s", a->hostname);                   /* (C) */
 
     printf("Adresse IP   : ");
-    scanf("%s", a->ip);                         /* (D) */
+    scanf("%15s", a->ip);                         /* (D) */
 
     printf("Criticite    : ");
     scanf("%d", &a->criticite);
@@ -74,7 +77,7 @@ void definir_note(void)
     char saisie[256];
 
     printf("Numero de l'actif : ");
-    scanf("%d", &idx);                          /* (E) */
+    scanf("%4d", &idx);                          /* (E) */
 
     printf("Note              : ");
     scanf(" %255[^\n]", saisie);

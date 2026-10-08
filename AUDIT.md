@@ -170,7 +170,7 @@ Ligne 92
 
 ### 3. Le **mécanisme** en une ou deux phrases
 
-Le pointeur ptr pointe toujours vers la même adresse, mais cette mémoire ne lui appartient plus quand on ne met pas de NULL
+Le pointeur pointe toujours vers la même adresse, mais cette mémoire ne lui appartient plus quand on ne met pas de NULL
 
 ### 4. Le **correctif** proposé
 ```c
