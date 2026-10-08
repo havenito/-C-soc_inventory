@@ -79,12 +79,16 @@ int ajouter_actif()
     if (compteur >= max)
     {
         max++;
-        actifs = realloc(actifs, max * sizeof(Actif));
-    }
-    if (actifs == NULL)
-    {
-        printf("Échec de l'allocation\n");
-        return EXIT_FAILURE;
+        Actif *tmp = realloc(actifs, max * sizeof(Actif));
+        if (tmp != NULL)
+        {
+            actifs = tmp;
+        }
+        else
+        {
+            printf("Échec de la réallocation\n");
+            return EXIT_FAILURE;
+        }
     }
     printf("Entrer le hostname : ");
     scanf("%31s", &actifs[compteur].hostname);
@@ -163,8 +167,12 @@ int supprimer_actif()
                 actifs[j] = actifs[j + 1];
             }
             compteur--;
-            actifs = realloc(actifs, compteur * sizeof(Actif));
-            if (actifs == NULL)
+            Actif *tmp = realloc(actifs, max * sizeof(Actif));
+            if (tmp != NULL)
+            {
+                actifs = tmp;
+            }
+            else
             {
                 printf("Échec de la réallocation\n");
                 return EXIT_FAILURE;
@@ -183,18 +191,24 @@ int quitter()
     exit(0);
 }
 
-int valider_ip(const char *ip_str) {
+int valider_ip(const char *ip_str)
+{
     int octet1, octet2, octet3, octet4;
     char extra;
     int resultat = sscanf(ip_str, "%d.%d.%d.%d%c", &octet1, &octet2, &octet3, &octet4, &extra);
 
-    if (resultat != 4) {
+    if (resultat != 4)
+    {
         return 0;
     }
-    if (octet1 < 0 || octet1 > 255) return 0;
-    if (octet2 < 0 || octet2 > 255) return 0;
-    if (octet3 < 0 || octet3 > 255) return 0;
-    if (octet4 < 0 || octet4 > 255) return 0;
+    if (octet1 < 0 || octet1 > 255)
+        return 0;
+    if (octet2 < 0 || octet2 > 255)
+        return 0;
+    if (octet3 < 0 || octet3 > 255)
+        return 0;
+    if (octet4 < 0 || octet4 > 255)
+        return 0;
 
     return 1;
 }

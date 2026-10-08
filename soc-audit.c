@@ -79,7 +79,7 @@ void definir_note(void)
     printf("Note              : ");
     scanf(" %255[^\n]", saisie);
 
-    inventaire[idx].note = malloc(strlen(saisie));   /* (F) */
+    inventaire[idx].note = malloc(strlen(saisie) + 1);   /* (F) */
     strcpy(inventaire[idx].note, saisie);            /* (G) */
 }
 
@@ -89,7 +89,8 @@ void supprimer_dernier(void)
     if (nb_actifs == 0)
         return;
     Actif *a = &inventaire[nb_actifs - 1];
-    free(a->note);                              /* (H) */
+    free(a->note);                                  /* (H) */    
+    a->note = NULL;                    
     nb_actifs--;
     printf("Actif '%s' supprime.\n", a->hostname);
 }
@@ -97,7 +98,7 @@ void supprimer_dernier(void)
 /* Liste tous les actifs. */
 void lister(void)
 {
-    for (int i = 0; i <= nb_actifs; i++) {      /* (I) */
+    for (int i = 0; i < nb_actifs; i++) {      /* (I) */
         Actif *a = &inventaire[i];
         printf("#%d  %-20s %-16s crit=%d  %s\n",
                i, a->hostname, a->ip, a->criticite,
